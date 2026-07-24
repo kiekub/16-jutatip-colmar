@@ -219,3 +219,63 @@ nav {
 .info-card__content a:hover {
     text-decoration: underline;
 }
+
+/* Courses Section */
+.courses {
+    padding: 32px 72px;
+    background-color: #d8d8d8;
+}
+
+.courses h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.course-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.course-card__content {
+    padding: 16px 16px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.course-card__content h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.course-card__content .course-label {
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.course-card__content .course-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
