@@ -6,13 +6,26 @@
 
 body {
     font-family: 'Jost', 'Open Sans', Helvetica, Arial, sans-serif;
-    color: #333;
+    color: #333333;
     background-color: #f5f5f5;
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+}
+
+.desktop-img {
+    display: block;
+}
+
+.mobile-img,
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
     display: block;
 }
 
@@ -26,33 +39,40 @@ header {
     background: white;
 }
 
-.logo {
+.logo,
+.desktop-logo {
     display: flex;
     align-items: center;
     gap: 8px;
     height: 32px;
 }
 
-.logo img {
+.logo img,
+.desktop-logo img {
     height: 32px;
     width: auto;
 }
 
 .logo-light {
-    color: #777;
+    color: #777777;
     font-weight: normal;
 }
 
-nav {
+.desktop-nav {
     display: flex;
     gap: 16px;
     align-items: center;
 }
 
-.nav__link {
+.nav__link,
+.desktop-nav a {
     text-decoration: none;
-    color: #333;
+    color: #333333;
     font-size: 16px;
+}
+
+.mobile-nav {
+    display: none;
 }
 
 /* Hero Banner */
@@ -61,15 +81,17 @@ nav {
     align-items: center;
     gap: 24px;
     padding: 32px 24px;
-    background: #d8d8d8;
+    background: #D8D8D8;
 }
 
-.hero-banner {
+.hero-banner,
+.hero-image {
     flex: 0 0 60%;
     width: 60%;
 }
 
-.hero-banner img {
+.hero-banner img,
+.hero-image img {
     width: 100%;
     height: auto;
     display: block;
@@ -87,17 +109,18 @@ nav {
 .hero-content h1 {
     font-size: 40px;
     font-weight: bold;
-    color: #333;
+    color: #333333;
     line-height: 1.2;
 }
 
 .hero-content p {
     font-size: 16px;
-    color: #333;
+    color: #333333;
     line-height: 1.4;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-start {
     width: 60%;
     padding: 8px 0;
     background-color: #404040;
@@ -106,142 +129,172 @@ nav {
     font-size: 16px;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* Information Section */
 .information {
     display: flex;
-    background-color: white;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 32px 24px;
+    gap: 24px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E0E0E0;
 }
 
-.info-main {
+.info-main,
+.info-left {
     flex: 0 0 60%;
     width: 60%;
-    padding: 32px 24px;
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #E0E0E0;
+    padding-right: 24px;
 }
 
-.info-main__img {
+.info-main__img,
+.info-main-img {
     width: 100%;
     height: auto;
     display: block;
+    margin-bottom: 32px;
 }
 
-.info-main__content {
-    margin-top: 32px;
+.info-main__content,
+.info-left-text {
     display: flex;
     flex-direction: column;
 }
 
-.info-main__content h2 {
-    font-size: 32px;
+.info-main__content h2,
+.info-left-text h2 {
+    font-size: 36px;
     font-weight: bold;
-    color: #333;
+    color: #333333;
     margin-bottom: 24px;
     line-height: 1.2;
 }
 
-.info-main__content .quote {
+.info-main__content .quote,
+.info-left-text .quote {
     font-size: 16px;
-    color: #333;
-    line-height: 1.5;
+    color: #4A4A4A;
+    line-height: 1.6;
     margin-bottom: 24px;
 }
 
-.info-main__content .author {
+.info-main__content .author,
+.info-left-text .author {
     font-size: 14px;
-    color: #333;
+    color: #666666;
+    margin-bottom: 32px;
 }
 
 /* Sidebar Cards */
-.info-sidebar {
+.info-sidebar,
+.info-right {
     flex: 0 0 40%;
     width: 40%;
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
 .info-card {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 16px;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
     gap: 16px;
 }
 
-.info-card:last-child {
-    border-bottom: none;
+.info-card--active,
+.info-card.highlight {
+    background-color: #D8D8D8;
+    border-color: #CCCCCC;
 }
 
-.info-card--active {
-    background-color: #d8d8d8;
-}
-
-.info-card__img {
+.info-card__img,
+.info-card .card-img {
     flex: 0 0 35%;
     width: 35%;
 }
 
-.info-card__img img {
+.info-card__img img,
+.info-card .card-img img,
+.info-card .card-img picture,
+.info-card-image img {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     display: block;
 }
 
-.info-card__content {
+.info-card__content,
+.info-card .card-text {
     flex: 0 0 65%;
     width: 65%;
     display: flex;
     flex-direction: column;
+    padding-left: 0;
 }
 
-.info-card__content h3 {
-    font-size: 20px;
+.info-card__content h3,
+.info-card .card-text h3 {
+    font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #333333;
     margin-bottom: 8px;
 }
 
-.info-card__content p {
+.info-card__content p,
+.info-card .card-text p {
     font-size: 14px;
-    color: #555;
+    color: #666666;
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
-.info-card__content a {
+.info-card__content a,
+.info-card .card-text a {
     font-size: 14px;
-    color: #0066cc;
+    color: #0070F3;
     text-decoration: none;
+    font-weight: 500;
 }
 
-.info-card__content a:hover {
+.info-card__content a:hover,
+.info-card .card-text a:hover {
     text-decoration: underline;
 }
 
-/* Courses Section */
-.courses {
+/* Course Section */
+.courses,
+.course {
+    background-color: #D8D8D8;
     padding: 32px 72px;
-    background-color: #d8d8d8;
-}
-
-.courses h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
     text-align: center;
-    margin-bottom: 32px;
 }
 
-.courses-grid {
+.courses h2,
+.course h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.courses-grid,
+.course-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+    text-align: left;
 }
 
 .course-card {
-    background-color: white;
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
 }
@@ -252,129 +305,158 @@ nav {
     display: block;
 }
 
-.course-card__content {
+.course-card__content,
+.course-content {
     padding: 16px 16px 24px 16px;
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.course-card__content h3 {
+.course-card__content h3,
+.course-content h3 {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #333333;
     margin-bottom: 8px;
 }
 
-.course-card__content .course-label {
+.course-label {
     font-size: 12px;
-    color: #777;
+    font-weight: bold;
+    color: #888888;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
     margin-bottom: 8px;
 }
 
-.course-card__content .course-desc {
+.course-desc {
     font-size: 14px;
-    color: #555;
+    color: #666666;
     line-height: 1.4;
 }
 
-/* Thesis Exhibit Section */
+/* Thesis Section */
 .thesis {
-    padding-top: 32px;
-    background-color: white;
+    background-color: #FFFFFF;
+    padding: 32px 24px;
+    text-align: center;
 }
 
 .thesis h2 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: bold;
-    color: #333;
-    text-align: center;
+    color: #333333;
     margin-bottom: 32px;
+    text-align: center;
 }
 
 .thesis-container {
     display: flex;
+    gap: 24px;
+    text-align: left;
 }
 
-.thesis-main {
+.thesis-main,
+.thesis-left {
     flex: 0 0 60%;
     width: 60%;
-    padding: 0 24px 32px 24px;
 }
 
-.thesis-video {
+.video-container {
+    width: 100%;
+    background-color: #333333;
+    margin-bottom: 24px;
+}
+
+.thesis-video,
+.video-container video {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     display: block;
-    background-color: #d8d8d8;
+    background-color: #333333;
 }
 
-.thesis-main__content {
+.thesis-main__content,
+.thesis-left-text {
     margin-top: 24px;
 }
 
-.thesis-main__content h3 {
+.thesis-main__content h3,
+.thesis-left-text h3 {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #333333;
     margin-bottom: 8px;
 }
 
-.thesis-main__content p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
+.thesis-main__content p,
+.thesis-left-text p {
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 1.6;
+    margin-bottom: 32px;
 }
 
-/* Thesis Sidebar */
-.thesis-sidebar {
+.thesis-sidebar,
+.thesis-right {
     flex: 0 0 40%;
     width: 40%;
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
 .thesis-card {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
     gap: 16px;
 }
 
-.thesis-card--active {
-    background-color: #d8d8d8;
+.thesis-card--active,
+.thesis-card.highlight {
+    background-color: #D8D8D8;
+    border-color: #CCCCCC;
 }
 
-.thesis-card__img {
+.thesis-card__img,
+.thesis-card .card-img {
     flex: 0 0 35%;
     width: 35%;
 }
 
-.thesis-card__img img {
+.thesis-card__img img,
+.thesis-card .card-img img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.thesis-card__content {
+.thesis-card__content,
+.thesis-card .card-text {
     flex: 0 0 65%;
     width: 65%;
     display: flex;
     flex-direction: column;
 }
 
-.thesis-card__content h3 {
+.thesis-card__content h3,
+.thesis-card .card-text h3 {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #333333;
     margin-bottom: 8px;
 }
 
-.thesis-card__content p {
+.thesis-card__content p,
+.thesis-card .card-text p {
     font-size: 14px;
-    color: #555;
+    color: #666666;
     line-height: 1.4;
 }
 
@@ -384,22 +466,309 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #D8D8D8;
+    background-color: #FFFFFF;
     font-size: 12px;
-    color: #333;
-    background-color: white;
+    color: #666666;
 }
 
-.footer-links {
+.footer-copyright,
+.footer-left p {
+    font-size: 12px;
+    color: #666666;
+}
+
+.footer-links,
+.footer-right {
     display: flex;
     gap: 16px;
 }
 
-.footer-links a {
-    color: #333;
+.footer-links a,
+.footer-right a {
+    font-size: 12px;
+    color: #666666;
     text-decoration: none;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-right a:hover {
+    color: #000000;
     text-decoration: underline;
+}
+
+/* Mobile Responsiveness (<= 768px) */
+@media (max-width: 768px) {
+    header {
+        height: 64px;
+        padding: 0 16px;
+        justify-content: space-between;
+    }
+
+    .logo,
+    .desktop-logo,
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+        width: 100%;
+        height: 64px;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mobile-nav a img,
+    .mobile-nav__icon img {
+        height: 32px;
+        width: auto;
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+        background-color: #FFFFFF;
+    }
+
+    .hero-banner,
+    .hero-image {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .hero-banner img,
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .hero-content {
+        width: 100%;
+        background-color: #D8D8D8;
+        padding: 32px 16px;
+        align-items: flex-start;
+        text-align: left;
+        gap: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        color: #4A4A4A;
+        margin-bottom: 24px;
+    }
+
+    .btn-primary,
+    .btn-start,
+    .hero-content .btn-start {
+        display: block;
+        width: 100%;
+        background-color: #4A4A4A;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 8px 0;
+        font-size: 16px;
+        border: none;
+        margin-bottom: 0;
+    }
+
+    .desktop-only,
+    .desktop-img {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+    }
+
+    /* 3. CARDS (Information Section) */
+    .information,
+    .split-section {
+        flex-direction: column;
+        padding-top: 16px;
+        padding-bottom: 32px;
+        padding-left: 0;
+        padding-right: 0;
+        border-bottom: none;
+    }
+
+    .info-main,
+    .info-left,
+    .split-left {
+        display: none;
+    }
+
+    .info-sidebar,
+    .info-right,
+    .split-right {
+        flex: 0 0 100%;
+        width: 100%;
+        border-left: none;
+        padding: 0;
+        gap: 0;
+    }
+
+    .info-card {
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 64px;
+        border-bottom: none;
+        border: none;
+        background-color: transparent;
+    }
+
+    .info-card:last-child {
+        background-color: transparent;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .info-card-image,
+    .info-card__img {
+        flex: 0 0 100%;
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-bottom: 16px;
+    }
+
+    .info-card-image .desktop-img,
+    .info-card__img .desktop-img {
+        display: none !important;
+    }
+
+    .info-card-image img,
+    .info-card__img img,
+    .info-card-image .mobile-img,
+    .info-card__img .mobile-img {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .info-card-body,
+    .info-card__content,
+    .info-card__contentmobile {
+        flex: 0 0 100%;
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 0;
+    }
+
+    .info-card-body h3,
+    .info-card__content h3,
+    .info-card__contentmobile h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #333333;
+        margin-bottom: 8px;
+    }
+
+    .info-card-body p,
+    .info-card__content p {
+        font-size: 14px;
+        color: #4A4A4A;
+        margin-bottom: 8px;
+    }
+
+    .read-more,
+    .info-card-body a,
+    .info-card__content a {
+        font-size: 14px;
+        color: #4A90E2;
+    }
+
+    .courses,
+    .course {
+        background-color: #FFFFFF;
+        padding: 32px 16px;
+    }
+
+    .courses h2,
+    .course h2 {
+        font-size: 28px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .courses-grid,
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .course-card {
+        background-color: #D8D8D8;
+        padding: 0;
+    }
+
+    .course-card img {
+        display: none;
+    }
+
+    .course-card__content,
+    .course-content {
+        padding: 16px 16px 24px 16px;
+    }
+
+    .course-card__content h3,
+    .course-content h3 {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 0;
+    }
+
+    .course-label,
+    .course-desc {
+        display: none;
+    }
+
+    .thesis {
+        padding: 32px 0 0 0;
+        background-color: #FFFFFF;
+    }
+
+    .thesis-container {
+        flex-direction: column;
+    }
+
+    .thesis-main,
+    .thesis-left,
+    .thesis-sidebar,
+    .thesis-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    .thesis-main__content,
+    .thesis-left-text,
+    .thesis-sidebar,
+    .thesis-right {
+        display: none;
+    }
+
+    footer {
+        padding: 16px 24px;
+        justify-content: flex-start;
+    }
+
+    .footer-links,
+    .footer-right {
+        display: none;
+    }
 }
