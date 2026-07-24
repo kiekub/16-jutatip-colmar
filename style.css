@@ -136,8 +136,7 @@ header {
 /* Information Section */
 .information {
     display: flex;
-    padding: 32px 24px;
-    gap: 24px;
+    padding: 32px;
     background-color: #FFFFFF;
     border-bottom: 1px solid #E0E0E0;
 }
@@ -195,7 +194,7 @@ header {
     width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    
 }
 
 .info-card {
@@ -252,7 +251,6 @@ header {
     font-size: 14px;
     color: #666666;
     margin-bottom: 8px;
-    line-height: 1.4;
 }
 
 .info-card__content a,
@@ -584,11 +582,11 @@ footer {
 
     .desktop-only,
     .desktop-img {
-        display: none !important;
+        display: none;
     }
 
     .mobile-only {
-        display: block !important;
+        display: block;
     }
 
     /* 3. CARDS (Information Section) */
@@ -644,14 +642,14 @@ footer {
 
     .info-card-image .desktop-img,
     .info-card__img .desktop-img {
-        display: none !important;
+        display: none;
     }
 
     .info-card-image img,
     .info-card__img img,
     .info-card-image .mobile-img,
     .info-card__img .mobile-img {
-        display: block !important;
+        display: block;
         width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;
